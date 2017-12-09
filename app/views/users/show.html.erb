@@ -1,0 +1,13 @@
+<h1><%= @user.first_name + " " + @user.last_name %></h1>
+
+<ul>
+  <% @user.answers.each do |answer| %>
+    <li>
+      <%= answer.question.question_text %> 
+      <br>
+      <%= answer.answer_text %>
+    </li>
+
+    <br>
+  <% end %>
+</ul>

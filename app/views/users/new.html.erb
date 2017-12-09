@@ -1,0 +1,23 @@
+<%= render "shared/errors" %>
+
+<h1>Welcome to the Strive Talent assessment. This assessment will allow you to prove your potential to multiple employers at once. Good luck, and we'll be in touch!</h1>
+
+<form action=" <%= users_url %> " method="post">
+  
+  <h3>Enter Your Information:</h3>  
+  <label for="first_name">First name: </label>
+  <input id="first_name" type="text" name="user[first_name]">
+  <br>
+  
+  <label for="last_name">Last name: </label>
+  <input id="last_name" type="text" name="user[last_name]">
+  <br>
+
+
+  <label for="email">Email Adress: </label>
+  <input id="email" type="email" name="user[email]" value="">
+  <br>
+
+
+  <input type="submit">
+</form>

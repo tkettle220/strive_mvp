@@ -1,0 +1,15 @@
+<h1>All Answers</h1>
+
+<ul>
+  <% @answers.each do |answer| %>
+    <li>
+      <%= answer.question.question_text %> 
+      <br>
+      <%= answer.user.first_name + " " + answer.user.last_name %> wrote:
+      <br>
+      <%= answer.answer_text %>
+    </li>
+
+    <br>
+  <% end %>
+</ul>

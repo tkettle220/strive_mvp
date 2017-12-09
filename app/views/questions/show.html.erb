@@ -1,0 +1,42 @@
+
+<h1>Question <%= @question.id %> of 2</h1>
+
+<form action="/answers" method="post">
+  
+  <%= hidden_field_tag "answer[question_id]", "#{@question.id}" %>
+  <%= hidden_field_tag "answer[user_id]", "#{@user.id}" %>
+
+
+
+  <label for="answer_text">
+    <%= @question.question_text %>
+  </label>
+  
+  <br>
+  
+  <input id="answer_text" name="answer[answer_text]" type="text" />
+
+  <input type="submit">
+</form>
+
+<h4>Remaining Time</h4>
+<div id="clockdiv">
+  <div>
+    <span class="hours">Hours</span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes">Minutes</span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds">Seconds</span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+<script>
+var timeInSeconds = <%= @question.time_limit %>;
+var currentTime = Date.parse(new Date());
+var deadline = new Date(currentTime + timeInSeconds*1000);
+initializeClock('clockdiv', deadline);
+</script>
