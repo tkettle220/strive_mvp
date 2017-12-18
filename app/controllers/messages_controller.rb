@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    action, data = params[action], params[data]
+    action, data = params[:action], params[:data]
     text = action.to_s + " " + data.to_s
     @message = Messsage.new(message_text: text)
     @message.save!
